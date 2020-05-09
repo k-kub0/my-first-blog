@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <title>Kubo's Note</title>
+        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Kubo's Note</a></h1>
+            <h6>はてなブログに書くほどじゃないけど少しメモ程度に残しておきたい内容を投稿します。</h6>
+        </div>
+        <div class="container">
+            <!-- <div class="row">
+                <div class="col-md-8"> -->
+                {% block content %}
+                {% endblock %}
+                <!-- </div>
+            </div> -->
+        </div>
+    </body>
+</html>
