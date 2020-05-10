@@ -1,6 +1,22 @@
-{% extends 'blog/base.html' %}
+{% load static %}
 
-{% block content %}
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+     -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+    <nav class="navbar navbar-dark bg-dark">
+            <a href="/" class="navbar-brand">Kubo's Note</a>
+        </nav>
+</head>
+
+<body>
 <div class="post">
     {% if post.published_date %}
     <div class="date">
@@ -8,7 +24,6 @@
         {{ post.category }}
     </div>
     {% endif %}
-    <h2>{{ post.title }}</h2>
+    <h3>{{ post.title }}</h3>
     <p>{{ post.text|linebreaksbr }}</p>
 </div>
-{% endblock %}

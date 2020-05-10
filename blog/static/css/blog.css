@@ -1,11 +1,11 @@
 .page-header {
-    background-color: #3498db;
+    background-color: snow;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
+    color: black;
     font-size: 36pt;
     text-decoration: none;
 }
@@ -27,7 +27,7 @@
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
+    color: snow;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
@@ -47,8 +47,8 @@
 }
 
 .card {
-    min-width: 220px;
-    max-width: 270px;
+    min-width: 30%;
+    max-width: 400px;
     margin-bottom: 40px !important;
     margin: auto;
     background-color: snow;
@@ -64,6 +64,7 @@
     transition: all .3s;
     margin: 10px 0 0 0;
     border-width:3px;
+    margin:50px;
 }
 
 .card:hover {
@@ -73,7 +74,10 @@
 }
 
 .container {
+    display: grid;
     padding-top: 50px;
+    grid-template-rows: 200px 100px;
+    grid-template-columns: 200px 100px 100px;
 }
 
 span {
@@ -84,7 +88,117 @@ h2 {
     font-size: 1rem;
 }
 
-h6 {
-    color:white;
+h3 {
+    padding: 0.5em;/*文字周りの余白*/
+    color: #010101;/*文字色*/
+    background: #eaf3ff;/*背景色*/
+    border-bottom: solid 3px #516ab6;/*下線*/
 }
+
+@media (max-width: 767px) {
+    .side-var {
+      display: none;
+    }
+  }
+
+@media (min-width: 767px) {
+    .top-image {
+      display: none;
+    }
+  }
+
+  /*枠デザイン*/
+.profile_box {
+    margin: 2em 0;
+    color: black;
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    /* border: solid 3px gray;
+    border-radius: 8px; */
+    }
+    
+    
+    /*内容*/
+    .profile_center{
+    text-align: center;
+    margin: 10px 15px 0 0;
+    }
+    /*名前*/
+    .profile_name {
+    padding: 15px 20px;
+    font-weight:bold;
+    font-size:16px;
+    border-bottom: solid 1px gray;
+    }
+    /*自己紹介文*/
+    .profile_box p {
+    padding: 15px 20px;
+    margin: 0;
+    }
+
+    .profile_figure {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .side-var {
+        padding-left:1rem;
+        border-right: solid 1px gray;
+        position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+    }
+
+    .btn {
+        font-size: 14px !important; /* 文字のサイズ */
+        line-height: 1em;
+        background: #353b48; /* 背景色 */
+        color: snow; /* 文字色 */
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px 10px; /* 文字周りの余白 */
+        margin-top: 10px; /* タグ同士の余白 */
+        
+        text-decoration: none;
+    }
+    .btn:hover {
+        background: snow; /* マウスホバー時の背景色 */
+        color:#353b48; /* マウスホバー時の文字色*/
+        border : solid 1.5px #353b48 ; 
+    }
+    h1 {
+        position: relative;
+        display: inline-block;
+        padding: 0 55px;
+        text-align: center
+      }
+      
+      h1:before, h1:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        display: inline-block;
+        width: 45px;
+        height: 1px;
+        background-color: black;
+      }
+
+
+body {
+    background-color: snow;
+    animation: fadeIn 2s ease 0s 1 normal;
+    -webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
 
