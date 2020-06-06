@@ -13,90 +13,56 @@
     <nav class="navbar navbar-dark bg-dark">
         <a href="/" class="navbar-brand">Kubo's Note</a>
     </nav>
+
+
 </head>
 
 <body>
     <div id="content">
-            <div class="container-fluid">
-        <div class="top-image">
+        <div class="container-fluid">
+            <div class="top-image">
                 <div class="profile_box">
-                        <div class="profile_center">
-                            <img src="{% static 'profileimagepng.png' %}" class="profile_figure">
-                            <div class="profile_name">Kubo Kenta</div>
-                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                        </div>
+                    <div class="profile_center">
+                        <img src="{% static 'profileimagepng.png' %}" class="profile_figure">
+                        <div class="profile_name">Name：Kubo Kenta</div>
+                        メモ程度に残しておきたい内容を投稿します。
+                        主に私が見返す用です。
+                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                     </div>
-        </div>
-        
-            <!-- <div class="row">
-                    <div class="col-2">
-                    <div class="side-var">
-                        <div class="profile_box">
-                            <div class="profile_center">
-                                <img src="{% static 'profileimagepng.png' %}" class="profile_figure">
-                                <div class="profile_name">Kubo Kenta</div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                    
-                
-
-                <div class="col-sm-12">
-                    <a class="btn" href="/" role="button">ALL</a>
-                    {% for allcategory in allcategory %}
-                    <a class="btn" href="/category/{{ allcategory.name }}"
-                        role="button">{{ allcategory.name }}</a>
-                    {% endfor %}
-                    
-                    <div class="card-deck">
-                    {% for post in posts %}
-                   
-                    <div class="card border-right-0 border-bottom-0" href="#" >
-                        <div class="post">
-                            <div class="date">
-                                {{ post.published_date }}
-                                {{ post.category }}
-
-                            </div>
-                            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                        </div>
-                    </div>
-
-                    <!-- <div class="card-deck">
-                            <div class="card">
-                              <img class="card-img-top" src="..." alt="Card image cap">
-                              <div class="card-body">
-                                <h4 class="card-title">Card title</h4>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              </div>
-                            </div>
-                            <div class="card">
-                              <img class="card-img-top" src="..." alt="Card image cap">
-                              <div class="card-body">
-                                <h4 class="card-title">Card title</h4>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              </div>
-                            </div>
-                            <div class="card">
-                              <img class="card-img-top" src="..." alt="Card image cap">
-                              <div class="card-body">
-                                <h4 class="card-title">Card title</h4>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                              </div>
-                            </div>
-                          </div> -->
-                
-
-                    {% endfor %}
                 </div>
+            </div>
+
+
+
+
+            <div class="col-sm-12">
+                <a class="btn" href="/" role="button">ALL</a>
+                {% for allcategory in allcategory %}
+                <a class="btn" href="/category/{{ allcategory.name }}" role="button">{{ allcategory.name }}</a>
+                {% endfor %}
+
+                <div class="card-deck">
+                    {% for post in posts %}
+                    <div class="col-md-6">
+                        <div class="card" href="#">
+                            <div class="post">
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <div class="date">
+                                    {{ post.published_date }}
+                                    <br>
+                                    Category：{{ post.category }}
+                                    <hr>
+                                </div>
+                                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                                <!-- {{ post.summary }} 投稿一覧にサマリーを追加したいときに追加する--> 
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 

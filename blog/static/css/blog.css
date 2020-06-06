@@ -15,7 +15,12 @@
 }
 
 .date {
-    color: black;
+    color: gray;
+}
+
+.category {
+    color: gray;
+    margin-bottom: 1rem;
 }
 
 .save {
@@ -47,23 +52,26 @@
 }
 
 .card {
-    min-width: 30%;
-    max-width: 400px;
+    /* min-width: 30%; */
+    max-width: 90%;
+    max-height: 90%;
     margin-bottom: 40px !important;
     margin: auto;
-    background-color: snow;
-    padding: 0.5em;/*文字周りの余白*/
+    background-color: white !important;
+    padding-top: 2em;/*文字周りの余白*/
+    padding-left: 1.5em;/*文字周りの余白*/
+    padding-right: 1.5em;/*文字周りの余白*/
     color: #010101;/*文字色*/
     background: snow;背景色
-    border-top: solid 5px #516ab6;/*下線*/
-    color: #fff !important;
+    border: solid 5px;/*下線*/
+    color:#141823;　!important;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-transition: all .3s;
     transition: all .3s;
     margin: 10px 0 0 0;
-    border-width:3px;
+    border-width:2px;
     margin:50px;
 }
 
@@ -85,17 +93,27 @@ span {
     }
 
 h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 h3 {
     padding: 0.5em;/*文字周りの余白*/
     color: #010101;/*文字色*/
-    background: #eaf3ff;/*背景色*/
-    border-bottom: solid 3px #516ab6;/*下線*/
+    border-bottom: solid 4px gray;/*下線*/
+    
+    /* text-align: center; */
+    margin-top:15px;
 }
 
-@media (max-width: 767px) {
+.detail{
+    padding-top:30px;
+}
+
+/* .top-image {
+    background-color: #516ab6;
+} */
+
+/* @media (max-width: 767px) {
     .side-var {
       display: none;
     }
@@ -105,7 +123,7 @@ h3 {
     .top-image {
       display: none;
     }
-  }
+  } */
 
   /*枠デザイン*/
 .profile_box {
@@ -129,7 +147,6 @@ h3 {
     padding: 15px 20px;
     font-weight:bold;
     font-size:16px;
-    border-bottom: solid 1px gray;
     }
     /*自己紹介文*/
     .profile_box p {
@@ -159,7 +176,7 @@ h3 {
         white-space: nowrap;
         padding: 10px 10px; /* 文字周りの余白 */
         margin-top: 10px; /* タグ同士の余白 */
-        
+        margin-bottom: 20px; /* タグ同士の余白 */
         text-decoration: none;
     }
     .btn:hover {
@@ -167,6 +184,8 @@ h3 {
         color:#353b48; /* マウスホバー時の文字色*/
         border : solid 1.5px #353b48 ; 
     }
+
+    
     h1 {
         position: relative;
         display: inline-block;

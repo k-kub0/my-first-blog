@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<div class="post">
+<!-- <div class="post">
     {% if post.published_date %}
     <div class="date">
         {{ post.published_date }}
@@ -25,5 +25,21 @@
     </div>
     {% endif %}
     <h3>{{ post.title }}</h3>
-    <p>{{ post.text|linebreaksbr }}</p>
+    <p>{{ post.text| safe }}</p> -->
+
+
+    <div class="card" href="#">
+            <div class="post">
+                    {% if post.published_date %}
+                    <div class="date">
+                        {{ post.published_date }}
+                        {{ post.category }}
+                    </div>
+                    {% endif %}
+                    <h3>{{ post.title }}</h3>
+                    <div class="detail">
+                    <p>{{ post.text| safe }}</p>
+                </div>
+        </div>
+        <a class="btn" href="/" role="button">投稿一覧に戻る</a>
 </div>

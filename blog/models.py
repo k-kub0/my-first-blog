@@ -22,6 +22,9 @@ class Post(models.Model):
         self.published_date = timezone.now()
         self.save()
 
+    # def summary(self):
+    #      return self.text[:200] 投稿一覧にサマリーを追加したいときに追加する
+
     def __str__(self):
         return self.title
 

@@ -5,7 +5,7 @@ from django.views import generic  # 追記
 from django.shortcuts import render, get_object_or_404
 
 def post_list(request):
-    posts = Post.objects.order_by('published_date')
+    posts = Post.objects.order_by('-published_date')
     allcategory = Category.objects.all()
     categories = Category.objects.all()
     return render(request, 'blog/post_list.html', {'allcategory': allcategory, 'posts': posts, 'categories': categories})

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'django_summernote',    # 追記
 ]
 
 MIDDLEWARE = [
@@ -75,12 +76,31 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# sqlite用設定
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# mysql用設定
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'blog', # DB名を設定
+#         'USER': 'user', # DBへ接続するユーザIDを設定
+#         'PASSWORD': 'pass', # DBへ接続するユーザIDのパスワードを設定
+#         'HOST': 'localhost',
+#         'PORT': '8889',
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#         },
+#         'TEST': {
+#             'NAME': 'test_sample'
+#         }
+#     }
+# }
 
 
 # Password validation
@@ -121,3 +141,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
